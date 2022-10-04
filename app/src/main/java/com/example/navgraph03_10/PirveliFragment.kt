@@ -45,6 +45,10 @@ class PirveliFragment : Fragment() {
 
                 bundle.putString("email", "ragacc meili")
                 bundle.putInt("password", 56)
+                bundle.putInt("password", 56)
+                bundle.putInt("password", 56)
+                bundle.putInt("password", 56)
+                bundle.putInt("password", 56)
 
                 val meoreFragmenti = MeoreFragment()
                 meoreFragmenti.arguments = bundle
