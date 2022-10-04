@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pirveliFragment">
+
+    <fragment
+        android:id="@+id/pirveliFragment"
+        android:name="com.example.navgraph03_10.PirveliFragment"
+        android:label="fragment_pirveli"
+        tools:layout="@layout/fragment_pirveli" >
+        <action
+            android:id="@+id/action_pirveliFragment_to_meoreFragment"
+            app:destination="@id/meoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meoreFragment"
+        android:name="com.example.navgraph03_10.MeoreFragment"
+        android:label="fragment_meore"
+        tools:layout="@layout/fragment_meore" >
+        <action
+            android:id="@+id/action_meoreFragment_to_pirveliFragment"
+            app:destination="@id/pirveliFragment" />
+    </fragment>
+</navigation>
