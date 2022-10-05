@@ -12,7 +12,6 @@ import com.example.navgraph03_10.databinding.FragmentMesameBinding
 class MesameFragment : Fragment() {
 
     lateinit var binding: FragmentMesameBinding
-    private lateinit var email: String
     private lateinit var username: String
     private lateinit var profilePicture: Uri
 
@@ -31,11 +30,10 @@ class MesameFragment : Fragment() {
         binding = FragmentMesameBinding.inflate(inflater, container, false)
         val args: MesameFragmentArgs = MesameFragmentArgs.fromBundle(requireArguments())
 
-        email = args.email
         username = args.username
         profilePicture = args.image
 
-        binding.view1.text = email
+        binding.view1.text = args.email
         binding.profilePicture.setImageURI(profilePicture)
         binding.view2.text = "${binding.view2.text}, Welcome aboard $username"
 
