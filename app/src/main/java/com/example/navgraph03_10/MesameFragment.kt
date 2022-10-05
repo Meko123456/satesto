@@ -32,11 +32,12 @@ class MesameFragment : Fragment() {
         val args: MesameFragmentArgs = MesameFragmentArgs.fromBundle(requireArguments())
 
         email = args.email
+        username = args.username
         profilePicture = args.image
 
         binding.view1.text = email
         binding.profilePicture.setImageURI(profilePicture)
-        binding.view2.text = "${binding.view2.text}, Welcome aboard ${args.username}"
+        binding.view2.text = "${binding.view2.text}, Welcome aboard $username"
 
         val view = binding.root
 
