@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MeoreFragment"
-    android:background="@color/purple_200">
-
+>
     <TextView
         android:id="@+id/tvSecondFragment1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:layout_marginTop="50dp"
         android:text="@string/hello_blank_fragment" />
@@ -17,7 +16,7 @@
     <TextView
         android:id="@+id/tvSecondFragment2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:layout_marginTop="100dp"
         android:text="@string/hello_blank_fragment" />
@@ -25,9 +24,37 @@
     <TextView
         android:id="@+id/tvSecondFragment3"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:gravity="center"
         android:layout_marginTop="150dp"
         android:text="@string/hello_blank_fragment" />
 
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="200dp"
+        />
+
+    <Button
+        android:id="@+id/takePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="350dp"
+        android:text="take_photo"
+/>
+    <Button
+        android:id="@+id/chooseFromGallery"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="400dp"
+        android:text="choose_from_gallery"
+/>
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="450dp"
+        android:text="submit"
+/>
 </FrameLayout>

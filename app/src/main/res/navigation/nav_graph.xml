@@ -19,8 +19,21 @@
         android:name="com.example.navgraph03_10.MeoreFragment"
         android:label="fragment_meore"
         tools:layout="@layout/fragment_meore" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="username" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="email" />
         <action
-            android:id="@+id/action_meoreFragment_to_pirveliFragment"
-            app:destination="@id/pirveliFragment" />
+            android:id="@+id/action_meoreFragment_to_mesameFragment"
+            app:destination="@id/mesameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mesameFragment"
+        android:name="com.example.navgraph03_10.MesameFragment"
+        android:label="fragment_mesame"
+        tools:layout="@layout/fragment_mesame" />
 </navigation>
