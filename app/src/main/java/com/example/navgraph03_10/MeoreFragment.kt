@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
@@ -29,6 +30,7 @@ class MeoreFragment : Fragment() {
     lateinit var userName : String
     private val capturePhotoRequestCode = 1
     private val choosePhotoRequestCode = 2
+    private lateinit var surati: Uri
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +71,8 @@ class MeoreFragment : Fragment() {
         }
 
         binding.btnSubmit.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_meoreFragment_to_pirveliFragment)
+            val action = MeoreFragmentDirections.actionMeoreFragmentToMesameFragment(email = email, username = userName, image = surati)
+            Navigation.findNavController(view).navigate(action)
         }
 
         return view
@@ -122,15 +125,20 @@ class MeoreFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, photo: Intent?) {
         super.onActivityResult(requestCode, resultCode, photo)
-        if (resultCode == Activity.RESULT_OK && requestCode == capturePhotoRequestCode && photo != null)
+
+        if (photo != null && resultCode == Activity.RESULT_OK)
         {
-            binding.profilePicture.setImageBitmap(photo.extras?.get("data") as Bitmap)
-        }
-        if (resultCode == Activity.RESULT_OK && requestCode == choosePhotoRequestCode && photo != null)
-        {
-            val surati: Uri? = photo.data
-            binding.profilePicture.setImageURI(surati)
-            //gasagzavni.putExtra("Profile picture", surati.toString())
+            surati = photo.data.toString().toUri()
+
+            if (requestCode == capturePhotoRequestCode)
+            {
+                binding.profilePicture.setImageBitmap(photo.extras?.get("data") as Bitmap)
+            }
+            if (requestCode == choosePhotoRequestCode)
+            {
+                binding.profilePicture.setImageURI(surati)
+
+            }
         }
 
     }

@@ -35,5 +35,18 @@
         android:id="@+id/mesameFragment"
         android:name="com.example.navgraph03_10.MesameFragment"
         android:label="fragment_mesame"
-        tools:layout="@layout/fragment_mesame" />
+        tools:layout="@layout/fragment_mesame" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="username" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="email" />
+        <argument
+            android:name="image"
+            app:argType="android.net.Uri" />
+
+    </fragment>
 </navigation>
